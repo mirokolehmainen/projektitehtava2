@@ -73,7 +73,7 @@ app.delete('/api/poista/:_id', async(req, res) =>{
       const {_id} = req.params;
       const product = await Kala.findByIdAndDelete(_id);
       if(!product){
-          return res.status(404).json({message: `cannot find any product with ID ${_id}`})
+          return res.status(404).json({message: `Hakusi ei tuota tuloksia ${_id}`})
       }
       res.status(200).json(product);
       
