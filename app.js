@@ -59,7 +59,7 @@ app.put('/api/muokataan/:id', async(req, res) => {
       if(!kala){
           return res.status(404).json({message: `Hakusi ei tuota tuloksia ${id}`})
       }
-      const Muokattu = await Product.findById(id);
+      const Muokattu = await Kala.findById(id);
       res.status(200).json(Muokattu);
       
   } catch (error) {
@@ -75,7 +75,7 @@ app.delete('/api/poista/:_id', async(req, res) =>{
       if(!kala){
           return res.status(404).json({message: `Hakusi ei tuota tuloksia ${_id}`})
       }
-      res.status(200).json(product);
+      res.status(200).json(kala);
       
   } catch (error) {
       res.status(500).json({message: error.message})
